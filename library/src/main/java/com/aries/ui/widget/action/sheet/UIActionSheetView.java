@@ -19,6 +19,7 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -48,9 +49,6 @@ public class UIActionSheetView {
 
     public UIActionSheetView(Context context) {
         this.context = context;
-    }
-
-    public UIActionSheetView builder() {
         // 获取Dialog布局
         View view = LayoutInflater.from(context).inflate(
                 R.layout.layout_action_sheet_view, null);
@@ -85,7 +83,14 @@ public class UIActionSheetView {
                 lLayout_content.removeAllViews();
             }
         });
+    }
+
+    public UIActionSheetView builder() {
         return this;
+    }
+
+    public Dialog getDialog() {
+        return dialog;
     }
 
     /**
@@ -169,6 +174,16 @@ public class UIActionSheetView {
         return setTitleColor(Color.parseColor(color));
     }
 
+    public UIActionSheetView setTitleColorResoure(int colorRes) {
+        int color = context.getResources().getColor(R.color.colorActionSheetTitleText);
+        try {
+            color = context.getResources().getColor(colorRes);
+        } catch (Exception e) {
+
+        }
+        return setTitleColor(color);
+    }
+
     /**
      * 设置cancel 内容
      *
@@ -206,6 +221,16 @@ public class UIActionSheetView {
         return setCancelColor(Color.parseColor(color));
     }
 
+    public UIActionSheetView setCancelColorResource(int colorRes) {
+        int color = context.getResources().getColor(R.color.colorActionSheetTitleText);
+        try {
+            color = context.getResources().getColor(colorRes);
+        } catch (Exception e) {
+
+        }
+        return setCancelColor(color);
+    }
+
     public UIActionSheetView setView(View view) {
         if (lLayout_view != null && view != null) {
             lLayout_view.addView(view);
@@ -224,8 +249,8 @@ public class UIActionSheetView {
         return this;
     }
 
-    public UIActionSheetView setItems(String[] items, OnSheetItemListener onItemSelected) {
-        if (items == null || items.length == 0) {
+    public UIActionSheetView setItems(List<String> items, OnSheetItemListener onItemSelected) {
+        if (items == null || items.size() == 0) {
             return this;
         }
         List<SheetItem> list = new ArrayList<>();
@@ -235,8 +260,15 @@ public class UIActionSheetView {
         return setItems(list);
     }
 
-    public UIActionSheetView setItems(int items, OnSheetItemListener onItemSelected) {
-        return setItems(context.getResources().getStringArray(items), onItemSelected);
+    public UIActionSheetView setItems(String[] items, OnSheetItemListener onItemSelected) {
+        if (items == null || items.length == 0) {
+            return this;
+        }
+        return setItems(Arrays.asList(items), onItemSelected);
+    }
+
+    public UIActionSheetView setItems(int itemsRes, OnSheetItemListener onItemSelected) {
+        return setItems(context.getResources().getStringArray(itemsRes), onItemSelected);
     }
 
 
@@ -256,6 +288,21 @@ public class UIActionSheetView {
     }
 
     /**
+     * @param index
+     * @param colorRes
+     * @return
+     */
+    public UIActionSheetView setItemTextColorResource(int index, int colorRes) {
+        int color = context.getResources().getColor(R.color.colorActionSheetItemText);
+        try {
+            color = context.getResources().getColor(colorRes);
+        } catch (Exception e) {
+
+        }
+        return setItemTextColor(index, color);
+    }
+
+    /**
      * 设置所有item颜色-setItems后调用
      *
      * @param color
@@ -269,6 +316,20 @@ public class UIActionSheetView {
             item.color = color;
         }
         return this;
+    }
+
+    /**
+     * @param colorRes 设置资源文件颜色
+     * @return
+     */
+    public UIActionSheetView setItemsTextColorResource(int colorRes) {
+        int color = context.getResources().getColor(R.color.colorActionSheetItemText);
+        try {
+            color = context.getResources().getColor(colorRes);
+        } catch (Exception e) {
+
+        }
+        return setItemsTextColor(color);
     }
 
     /**

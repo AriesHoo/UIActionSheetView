@@ -1,1 +1,1 @@
-include ':app',  ':UIActionSheetViewLib'
+include ':app',  ':library'
