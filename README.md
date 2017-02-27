@@ -17,7 +17,7 @@ allprojects {
 
 ```
 dependencies {
-     compile 'com.github.AriesHoo:UIActionSheetView:1.0.0'
+     compile 'com.github.AriesHoo:UIActionSheetView:1.0.1'
 }
 ```
 
