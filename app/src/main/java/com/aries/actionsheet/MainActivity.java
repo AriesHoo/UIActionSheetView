@@ -10,7 +10,6 @@ import com.aries.ui.widget.action.sheet.UIActionSheetView;
 
 public class MainActivity extends AppCompatActivity {
 
-    String[] items = new String[]{"item0", "item1", "item2", "item3", "item4", "item5", "item6"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +18,11 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_normal).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new UIActionSheetView(MainActivity.this)
-                        .setTitle("UIActionSheetView-normal")
+                new UIActionSheetView(MainActivity.this, UIActionSheetView.STYLE_NORMAL)
                         .setCancelMessage("取消")
+                        .setCancelMessageMargin(0, 0, 0, 0)
                         .setItems(R.array.arrays_items_action, onActionSheetItemLister)
+                        .setItemsTextColor(Color.BLACK)
                         .show();
             }
         });
@@ -31,13 +31,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 new UIActionSheetView(MainActivity.this)
                         .setTitle("UIActionSheetView-变色")
-                        .setTitleColorResoure(R.color.colorItems)
+                        .setTitleColorResource(R.color.colorItems)
                         .setCancelMessage("取消")
                         .setCancelColorResource(R.color.colorAccent)
                         .setItems(R.array.arrays_items_action, onActionSheetItemLister)
                         .setItemsTextColorResource(R.color.colorAccent)
                         .setItemTextColor(2, Color.parseColor("#000000"))
-                        .setItemTextColorResource(5,R.color.colorItems)
+                        .setItemTextColorResource(5, R.color.colorItems)
                         .show();
             }
         });
