@@ -2,7 +2,7 @@
 --------------------------
 ### 一、简介：
 
-一个仿iOS ActionSheetView，支持文本及颜色设置
+一个仿iOS ActionSheetView，支持文本及颜色设置;更全常见UI库参看 [UIWidget](https://github.com/AriesHoo/UIWidget)
 
 1、默认样式为iOS 效果支持文本颜色字体等设置
 
