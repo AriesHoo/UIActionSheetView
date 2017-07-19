@@ -1,8 +1,8 @@
-# UIActionView
+# UIActionSheetView
 --------------------------
 ### 一、简介：
 
-一个仿iOS ActionView，支持文本及颜色设置
+一个仿iOS ActionSheetView，支持文本及颜色设置
 
 1、默认样式为iOS 效果支持文本颜色字体等设置
 
@@ -28,6 +28,7 @@ allprojects {
 ```
 dependencies {
      //compile 'com.github.AriesHoo:UIActionSheetView:1.1.0'
+     compile 'com.github.AriesHoo:UIActionSheetView:${LATEST_VERSION}'
 }
 ```
 
