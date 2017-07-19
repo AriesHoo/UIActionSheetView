@@ -2,8 +2,4 @@
 /.gradle
 /.idea
 /build
-/gradle
 /local.properties
-/app/app.iml
-/app/build
-/library/*.iml
