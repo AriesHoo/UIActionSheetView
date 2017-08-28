@@ -2,7 +2,9 @@
 --------------------------
 ### 一、简介：
 
-一个自定义ActionSheetView Dialog,包括iOS样式、微信样式、BottomSheet效果，支持文本及颜色设置;更全常见UI库参看 [UIWidget](https://github.com/AriesHoo/UIWidget)
+一个自定义ActionSheetView Dialog,包括iOS样式、微信样式、BottomSheet效果，支持文本及颜色设置;更全常见UI库参看 [UIWidget](https://github.com/AriesHoo/UIWidget) 
+
+## 说明1.2.0以后版本UIWidget维护，不再做版本更新
 
 1、包括iOS样式、微信样式、BottomSheet效果
 
