@@ -8,8 +8,8 @@ android {
         applicationId "com.aries.actionsheet"
         minSdkVersion ext.minSdkVersion
         targetSdkVersion ext.targetSdkVersion
-        versionCode 1
-        versionName "1.1.0"
+        versionCode 2
+        versionName "1.2.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
